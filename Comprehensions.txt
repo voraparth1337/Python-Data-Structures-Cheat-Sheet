@@ -1,0 +1,38 @@
+# Comprehensions - Concise syntax for creating data structures
+
+squares = []
+for x in range(100):
+    squares.append(x ** 2)
+print(squares[:5] + squares[-5:])
+# ->[0, 1, 4, 9, 16, 9025, 9216, 9409, 9604, 9801]
+
+# atlernative way (BETTER - using list comprehension)
+s = [x ** 2 for x in range(100) if (x % 5 == 0)]
+print(s[:5] + s[-5:])
+# ->[0, 25, 100, 225, 400, 5625, 6400, 7225, 8100, 9025]
+
+"""syntax goes like this
+    [f(xs) for xs in iter if(condition on x)]
+
+    where "f(x) is a function or operation on x"
+
+    "for loop runs value of x" through the iterable
+
+    value is added only "if condition" is satisfied
+
+    square brackets indicate creation of a list
+"""
+
+# other examples
+[word.lower() for word in sentence]
+[word for word in sentence if len(word) > 8]
+[(x, x ** 2, x ** 3) for x in range(10)]
+[(i, j) for i in range(5) for j in range(i)]
+
+# Dictionary Comprehensions
+{key_func(vars):val_func(vars) for vars in iterable}
+{v:k for k, v in d.items()}
+# Set Comprehensions
+{func(vars) for vars in iterable}
+{word for word in hamlet if is_palindrome(word.lower())}
+

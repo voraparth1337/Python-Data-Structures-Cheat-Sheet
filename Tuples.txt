@@ -1,0 +1,60 @@
+"""TUPLES
+ -> IMMUTABLE SEQUENCES -> SEQUENCE THAT CANNOT BE CHANGED
+Store collections of heterogeneous data
+Think struct- or SQL-like objects
+"Freeze" sequence to ensure hashability
+Tuples can be dictionary keys, but lists cannot
+Enforce immutability for fixed-size collections
+"""
+
+# declaring tuples
+# use paranthesis and are seperated by comma
+t = ("one",685)
+print(type(t))
+#<class 'tuple'>
+
+print(t)
+#('one', 685)
+
+
+t = ("one","two",4,5)
+print(t[:2])
+#('one', 'two')
+
+# Packing and unpacking
+t = ("one","two",4,5)
+
+#unpacking a tuple to four distinct variables
+w,x,y,z = t
+
+print(w,x,y,z)
+# one two 4 5
+
+#packing variables to a tuple -> comma seperated values are automatically interpreted as tuples
+t = x,y,z,w
+print(t)
+# ('two', 4, 5, 'one')
+
+"""different ways to swap values"""
+
+x = 5
+y = 6
+
+#swap 1
+temp = y
+y = x
+x= temp
+
+#swap 2 -> Using XOR
+x = x ^ y
+y = x ^ y
+x = x ^ y
+
+#swap 3 - packing unpacking in same step (This can be used to do two assigments in 1 line of code)
+x , y = y , x
+
+###*** Tuples contain immutable reference to underlying objects
+
+t = ([1,2,3],[6,7,8])
+
+t[0].append(4)

@@ -1,0 +1,81 @@
+"""python data structure notes"""
+"""DICTIONARIES-> THEY DO NOT HAVE ANY ORDER, ONLY VALUE KEY PAIRS"""
+
+empty = {}
+print(type(empty))
+if empty == dict():
+    print(True)
+
+# declaring dict
+
+a = dict(one=1, two=2, three=3)
+b = {"one": 1, "two": 2, "three": 3}
+print(a == b)
+
+# changing dictionary and accessing elements
+
+## GET
+print(b["three"])
+# output = 3
+
+## SET
+b["three"] = 4
+print(b["three"])
+# output = 4
+
+# List Inside dictionary
+dict_list = dict(two=[15,16,17],three=[15,16,17])
+
+dict_list_2 = {"two":[15,16,17],"three":[15,16,17]}
+
+
+print(len(dict_list.get("two")))
+#3
+
+print(dict_list_2.get("four",[]))
+#[]
+
+print(dict_list_2)
+#{'two': [15, 16, 17], 'three': [15, 16, 17]}
+
+__
+# declaring dict
+b = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8}
+
+# ways to delete
+
+del b["one"]
+
+# also returns the value
+
+temp = b.pop("two")
+print(temp)
+
+"""arbitary pop i.e randomly pops an item. can be used to iterate over a dict"""
+
+print(b.popitem())
+
+# VARIOUS METHODS FOR DICTs
+
+print(b.keys())
+# dict_keys(['one', 'four', 'eight', 'seven', 'three', 'six', 'two', 'five'])
+
+print(b.values())
+# dict_values([8, 2, 1, 4, 6, 7, 3, 5])
+
+print(b.items())
+# dict_items([('six', 6), ('eight', 8), ('four', 4), ('three', 3), ('seven', 7), ('one', 1), ('two', 2), ('five', 5)])
+
+# I see (key, value) as a pair like x and y co-ordinates
+if ('one',1) in b.items():
+    print(True)
+# True
+
+key_list = list(b.keys())
+print(key_list)
+#['three', 'five', 'seven', 'one', 'four', 'eight', 'two', 'six']
+
+x = b.copy()
+b.clear()
+
+

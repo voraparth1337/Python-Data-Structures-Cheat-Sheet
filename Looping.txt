@@ -1,0 +1,76 @@
+#ways of LOOPING
+lists = []
+for x in range(10):
+    lists.append(x)
+
+# Print normal list
+print(lists)
+# ->[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# print from index 1 to end
+print(lists[1:])
+# ->[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# print from index -5 to end
+print(lists[-5:])
+# ->[5, 6, 7, 8, 9]
+
+# print from index 0 to -5
+print(lists[:-5])
+# ->[0, 1, 2, 3, 4]
+
+# negative and positive indexing
+# -> [0,    1,  2,  3,  4,  5,  6,  7,  8, 9]
+#    [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
+
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
+# -> robin the brave
+#   gallahad the pure
+
+list_of_x = [14, 15, 16]
+list_of_y = [28, 30, 32]
+for x, y in zip(list_of_x, list_of_y):
+    print(x, y)
+# -> 14 28
+#   15 30
+#   16 32
+
+# reversed iteration
+for i in reversed(range(2,5)):
+    print(i)
+#-> 4
+#   3
+#   2
+
+# Sorted iteration -> leaves the source unaltered 
+basket = ["zipnix", "apple", "organe", "banana"]
+
+for i in sorted(basket):
+    print(i)
+# -> apple
+#   banana
+#   organe
+#   zipnix
+
+#shallow copy 
+words = ['cat', 'window', 'defenestrate']
+for w in words[:]:  # Shallow copy of the entire list.
+    if len(w) < 5:
+        words.append(w)
+print(words)
+# -> ['cat', 'window', 'defenestrate', 'cat']
+
+# so basically how this works is , you create a copy of the list for the for loop and then append to the original list
+# Same as
+words = ['cat', 'window', 'defenestrate']
+word = words.copy()
+for w in word:  
+    if len(w) < 5:
+        words.append(w)
+print(words)
+
+"""The difference between shallow and deep copying is only relevant for compound objects (objects that contain other objects, like lists or class instances)
+A shallow copy constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original.
+A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original."""

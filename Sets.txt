@@ -1,0 +1,82 @@
+"""SETS
+Unordered collection of
+distinct hashable elements -> ONE VALUE APPEARS ONLY ONCE"""
+
+s = {1,2,3,1,2,3} # they are written in curly braces seperated by commas
+print(s)
+#-> {1, 2, 3}
+
+#-> 1 Empty set
+empty_set = set() # not written as {} , because {} refers to empty dictionary
+
+#-> 2 Set from list
+set_from_list = set([1,2,3,4,1,2])
+print(set_from_list)
+#-> {1, 2, 3, 4}
+
+# Set operations
+
+#-> 1 Empty set
+empty_set = set() # not written as {} , because {} refers to empty dictionary
+
+#-> 2 Set from list
+set_from_list = set([1,2,3,4,1,2])
+print(set_from_list)
+#-> {1, 2, 3, 4}
+
+#-> 2 Set from a string
+set_from_string = set("Mississipie")
+print(set_from_string)
+#-> {'e', 'M', 's', 'i', 'p'}
+
+s = {1,2,3,4,5}
+s.add(6)
+print(s)
+#->{1, 2, 3, 4, 5, 6}
+s.remove(6)
+print(s)
+#->{1, 2, 3, 4, 5}
+s.discard(9) # same as remove but doesnt throw an error if the value is missing
+print(s.pop()) # randomly pops an item
+#->1
+s.clear() # as the name implies
+print(s)
+#->set()
+
+# Algebric Set operations
+a = {"A","B","C","D"}
+b = {"G","A","B","D"}
+
+# set difference
+print(a-b)
+#->{'C'}
+print(b-a)
+#->{'G'}
+
+print(a | b)           #union
+#->{'D', 'C', 'A', 'G', 'B'}
+
+print(a & b)        #Intersection
+#->{'D', 'A', 'B'}
+
+print(a ^ b)        #Symetric difference
+#->{'G', 'C'}
+
+# subset operations
+effecient_word = "parth"
+effecient_set = set(effecient_word)
+subset1 = set("part")
+subset2 = set("party")
+if subset1 <= effecient_set:  #this line checks if subset or not
+    print("subset 1 accepted")
+else:
+    print("subset 1 not accepted")
+
+if subset2 <= effecient_set:
+    print("subset 2 accepted")
+else:
+    print("subset 2 not accepted")
+    
+#->subset 1 accepted
+#  subset 2 not accepted
+
